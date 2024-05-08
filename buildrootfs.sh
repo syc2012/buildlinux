@@ -15,8 +15,9 @@ if [ ! -d $ROOTFS ]; then
 fi
 
 cat > $ROOTFS/buildinfo <<EOF
-Build Time:  $(date +%Y/%m/%d-%T)
+Build Date:  $(date +%Y/%m/%d-%T)
 Build Path:  $(pwd)
+Build Tool:  $(gcc --version | grep ^gcc)
 
 EOF
 
