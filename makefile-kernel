@@ -1,0 +1,23 @@
+
+DOWNLOAD = https://mirrors.edge.kernel.org/pub/linux/kernel
+
+kernel:
+	make -C $(KERNEL) ARCH=$(ARCH)
+	@cp -f $(KERNEL)/arch/$(ARCH)/boot/bzImage $(KIMAGE)
+
+kernel-config:
+	@test -e $(KERNEL).tar.xz || wget $(DOWNLOAD)/$(KVER)/$(KERNEL).tar.xz
+	@test -e $(KERNEL) || tar -Jxf $(KERNEL).tar.xz
+	-@cp -f $(KERNEL)_defconfig $(KERNEL)/arch/$(ARCH)/configs/x86_64_defconfig
+	make -C $(KERNEL) ARCH=$(ARCH) x86_64_defconfig
+
+kernel-menuconfig:
+	make -C $(KERNEL) ARCH=$(ARCH) menuconfig
+
+kernel-clean:
+#	make -C $(KERNEL) ARCH=$(ARCH) clean
+	@rm -f $(KIMAGE)
+
+kernel-distclean:
+	@rm -rf $(KERNEL)
+

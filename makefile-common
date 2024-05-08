@@ -1,0 +1,25 @@
+
+ARCH = x86
+MACHINE_SIZE = 64
+ARCH_ENDIAN = little
+
+KVER = v5.x
+KERNEL = linux-5.13.19
+ROOTFS = rootfs
+
+KIMAGE = bzImage
+RIMAGE = initramfs.cpio.gz
+ISOIMAGE = mylinux.iso
+
+CROSS = 
+CC = $(CROSS)gcc
+CXX = $(CROSS)g++
+AR = $(CROSS)ar
+RANLIB = $(CROSS)ranlib
+STRIP = $(CROSS)strip
+NM = $(CROSS)nm
+LD = $(CROSS)ld
+OBJDUMP = $(CROSS)objdump
+
+SHELL := /bin/bash
+

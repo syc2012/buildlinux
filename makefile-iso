@@ -1,0 +1,13 @@
+
+iso:
+	@./buildiso.sh $(KIMAGE) $(RIMAGE) $(ISOIMAGE)
+
+iso-config:
+	@chmod +x buildiso.sh
+
+iso-clean:
+	@rm -f $(ISOIMAGE)
+
+iso-distclean: iso-clean
+	@rm -rf iso
+

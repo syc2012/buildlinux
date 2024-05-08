@@ -1,0 +1,13 @@
+
+rootfs:
+	@./buildrootfs.sh $(ROOTFS) $(RIMAGE)
+
+rootfs-config:
+	@chmod +x buildrootfs.sh
+
+rootfs-clean:
+	@rm -f $(RIMAGE)
+
+rootfs-distclean: rootfs-clean
+	@rm -rf $(ROOTFS)
+
