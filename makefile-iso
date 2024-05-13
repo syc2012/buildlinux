@@ -9,5 +9,5 @@ iso-clean:
 	@rm -f $(ISOIMAGE)
 
 iso-distclean: iso-clean
-	@rm -rf iso
+	@rm -rf iso/*
 

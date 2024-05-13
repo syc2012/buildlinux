@@ -3,7 +3,7 @@ DOWNLOAD = https://mirrors.edge.kernel.org/pub/linux/kernel
 
 kernel:
 	make -C $(KERNEL) ARCH=$(ARCH)
-	@cp -f $(KERNEL)/arch/$(ARCH)/boot/bzImage $(KIMAGE)
+	@cp -f $(KERNEL)/arch/$(ARCH)/boot/bzImage iso/$(KIMAGE)
 
 kernel-config:
 	@test -e $(KERNEL).tar.xz || wget $(DOWNLOAD)/$(KVER)/$(KERNEL).tar.xz

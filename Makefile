@@ -10,10 +10,11 @@ distclean: clean kernel-distclean rootfs-distclean iso-distclean
 
 help:
 	@echo
-	@echo "ARCH    = $(ARCH) ($(MACHINE_SIZE)-bit)"
-	@echo "COMPILE = $(shell which $(CC))"
-	@echo "KERNEL  = $(KERNEL)"
-	@echo "ROOTFS  = $(ROOTFS)"
+	@echo "ARCH     = $(ARCH) ($(MACHINE_SIZE)-bit)"
+	@echo "COMPILE  = $(shell which $(CC))"
+	@echo "KERNEL   = $(KERNEL)"
+	@echo "ROOTFS   = $(ROOTFS)"
+	@echo "ISOIMAGE = $(ISOIMAGE)"
 	@echo
 
 include makefile-kernel

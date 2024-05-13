@@ -13,10 +13,12 @@ if [ $# -gt 2 ]; then
  ISOIMAGE=$3
 fi
 
-if [ ! -d iso ]; then
+cd iso
 
-mkdir -p iso/boot/grub
-cat > iso/boot/grub/grub.cfg <<EOF
+if [ ! -d boot ]; then
+
+mkdir -p boot/grub
+cat > boot/grub/grub.cfg <<EOF
 set timeout=0
 set default=0
 
@@ -27,9 +29,6 @@ menuentry "My Linux (RAM disk)" {
 	initrd /${RIMAGE}
 }
 
-menuentry "Reboot" {
-	reboot
-}
 EOF
 
 fi
@@ -44,13 +43,9 @@ if [ ! -f ${RIMAGE} ];then
  exit
 fi
 
-
-cp -f ${KIMAGE} iso/
-cp -f ${RIMAGE} iso/
+cd -
 
 /usr/local/grub2/bin/grub-mkrescue -o ${ISOIMAGE} iso
 
-rm -f iso/${KIMAGE}
-rm -f iso/${RIMAGE}
-
 echo "ISO generated -> ${ISOIMAGE}"
+echo

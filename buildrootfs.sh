@@ -23,8 +23,8 @@ EOF
 
 
 cd $ROOTFS
-find . -print | cpio -co | gzip -9 -c > ../$RIMAGE
+find . -print | cpio -co | gzip -9 -c > ../iso/$RIMAGE
 cd -
-gzip -l $RIMAGE
+gzip -l iso/$RIMAGE
 echo
 
