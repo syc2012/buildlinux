@@ -6,7 +6,7 @@ rootfs-config:
 	@chmod +x buildrootfs.sh
 
 rootfs-clean:
-	@rm -f $(RIMAGE)
+	@rm -f iso/$(RIMAGE)
 
 rootfs-distclean: rootfs-clean
 	@rm -rf $(ROOTFS)

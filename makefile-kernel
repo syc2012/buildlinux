@@ -16,7 +16,7 @@ kernel-menuconfig:
 
 kernel-clean:
 #	make -C $(KERNEL) ARCH=$(ARCH) clean
-	@rm -f $(KIMAGE)
+	@rm -f iso/$(KIMAGE)
 
 kernel-distclean:
 	@rm -rf $(KERNEL)
