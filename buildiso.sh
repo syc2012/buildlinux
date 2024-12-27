@@ -25,7 +25,7 @@ set default=0
 insmod all_video
 
 menuentry "My Linux (RAM disk)" {
-	linux  /${KIMAGE} root=/dev/ram0 rw console=tty0 console=ttyS0
+	linux  /${KIMAGE} root=/dev/ram0 rw
 	initrd /${RIMAGE}
 }
 
